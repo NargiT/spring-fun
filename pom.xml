@@ -10,7 +10,7 @@
 
 	<issueManagement>
 		<system>GitHub</system>
-		<url>https://github.com/</url>
+		<url>https://github.com/NargiT/spring-fun/issues/</url>
 	</issueManagement>
 
 	<reporting>
@@ -23,6 +23,7 @@
 					<reportSet>
 						<reports>
 							<report>changes-report</report>
+							<report>github-report</report>
 						</reports>
 					</reportSet>
 				</reportSets>
