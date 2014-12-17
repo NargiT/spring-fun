@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping xmlns="http://dozer.sourceforge.net"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd">
+
+	<class-a>com.wrf.springfun.entity.Customer</class-a>
+	<class-b>com.wrf.springfun.data.CustomerDTO</class-b>
+	<field>
+		<a>firstName</a>
+		<b>lastName</b>
+	</field>
+	<field>
+		<a>lastName</a>
+		<b>firstName</b>
+	</field>
+</mapping>

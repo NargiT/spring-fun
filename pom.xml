@@ -4,21 +4,92 @@
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.tchoug.spring</groupId>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.2.0.RELEASE</version>
+	</parent>
+
+	<groupId>com.wrf.springfun</groupId>
 	<artifactId>spring-fun</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
+	<scm>
+		<url>https://github.com/NargiT/spring-fun</url>
+	</scm>
 	<issueManagement>
 		<system>GitHub</system>
 		<url>https://github.com/NargiT/spring-fun/issues/</url>
 	</issueManagement>
+	<developers>
+		<developer>
+			<id>nargit</id>
+			<name>Tigran</name>
+			<email>-</email>
+			<organization/>
+			<organizationUrl/>
+			<roles>
+				<role>Developper</role>
+			</roles>
+		</developer>
+	</developers>
+	<properties>
+		<start-class>com.wrf.springfun.Application</start-class>
+		<java.version>1.8</java.version>
+		<!--UTF 8 for everything-->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<dozer.version>5.5.1</dozer.version>
+		<!--plugin version-->
+		<maven-changes-plugin.version>2.11</maven-changes-plugin.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.hsqldb</groupId>
+			<artifactId>hsqldb</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<!-- Start Dozer dependencies -->
+		<dependency>
+			<groupId>net.sf.dozer</groupId>
+			<artifactId>dozer</artifactId>
+			<version>${dozer.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.dozer</groupId>
+			<artifactId>dozer-spring</artifactId>
+			<version>${dozer.version}</version>
+		</dependency>
+		<!--End -->
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
 
 	<reporting>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-changes-plugin</artifactId>
-				<version>2.11</version>
+				<version>${maven-changes-plugin.version}</version>
+				<configuration>
+					<xmlPath>${basedir}/changes.xml</xmlPath>
+				</configuration>
 				<reportSets>
 					<reportSet>
 						<reports>

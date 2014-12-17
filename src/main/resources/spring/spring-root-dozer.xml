@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean class="org.dozer.spring.DozerBeanMapperFactoryBean">
+		<property name="mappingFiles" value="classpath*:/data/mappings/*.xml"/>
+		<property name="customConverters">
+			<list>
+				<bean id="customerToString" class="com.wrf.springfun.data.converter.CustomerToString" />
+			</list>
+		</property>
+		<property name="eventListeners">
+			<list>
+			</list>
+		</property>
+		<property name="factories">
+			<map>
+			</map>
+		</property>
+	</bean>
+</beans>
