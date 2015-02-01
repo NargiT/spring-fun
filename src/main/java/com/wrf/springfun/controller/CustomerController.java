@@ -30,8 +30,9 @@ public class CustomerController {
 	@Autowired
 	private Mapper mapper;
 
+	// FIXME : this is not REST !
 	@RequestMapping(value = "/customer", method = RequestMethod.POST)
-	public CustomerCreateAnswer customer(
+	public CustomerCreateAnswer createCustomer(
 			@RequestParam(value = "firstname") String firstName,
 			@RequestParam(value = "lastname") String lastName) {
 		Customer customer = new Customer(firstName, lastName);
@@ -40,7 +41,7 @@ public class CustomerController {
 	}
 
 	@RequestMapping(value = "/customer/{lastName}", method = RequestMethod.GET)
-	public CustomerDTO customer(@PathVariable String lastName) {
+	public CustomerDTO readCustomer(@PathVariable String lastName) {
 		List<Customer> customers = customerRepository.findByLastName(lastName);
 
 		if (customers.isEmpty()) {
