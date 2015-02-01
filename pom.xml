@@ -29,13 +29,16 @@
 			<organization/>
 			<organizationUrl/>
 			<roles>
-				<role>Developper</role>
+				<role>Developer</role>
 			</roles>
 		</developer>
 	</developers>
 	<properties>
+		<!--application environment default variable-->
+		<os_type>windows</os_type>
+		<env_type>dev</env_type>
+		<!-- starting class-->
 		<start-class>com.wrf.springfun.Application</start-class>
-		<java.version>1.8</java.version>
 		<!--UTF 8 for everything-->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
