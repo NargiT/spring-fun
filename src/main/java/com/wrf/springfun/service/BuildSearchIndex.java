@@ -28,8 +28,7 @@ public class BuildSearchIndex implements ApplicationListener {
 			FullTextEntityManager fullTextEntityManager =
 					Search.getFullTextEntityManager(entityManager);
 			fullTextEntityManager.createIndexer().startAndWait();
-		}
-		catch (InterruptedException e) {
+		} catch (InterruptedException e) {
 			logger.error("An error occurred trying to build the search index: ", e);
 		}
 	}

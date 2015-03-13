@@ -4,7 +4,7 @@
 	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<bean id="propertyPlaceholderConfigurer" class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
-		<property name="location" value="config/environment/${env_type}-${os_type}-hibernate-search.properties" />
+		<property name="location" value="config/hibernate-search.properties" />
 	</bean>
 
 </beans>

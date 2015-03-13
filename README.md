@@ -12,8 +12,26 @@ Integration of different libraries/framework with spring-boot
 # 1. How to run the web-application ?
 
 Simply running maven
-`mvn spring-boot:run`
-Or running with java after creating your jar with `mvn package` command `java -jar target/spring-fun-0.0.1-SNAPSHOT.jar`.
+`mvn spring-boot:run -Denv_type=dev -Dos_type=windows` or running with java after creating your jar with `mvn package` command `java -jar target/spring-fun-0.0.1-SNAPSHOT.jar`.
+
+<table>
+	<tr>
+		<td>os_type</td>
+		<td>env_type</td>
+	</tr>
+	<tr>
+		<td>windows</td>
+		<td>dev</td>
+	</tr>
+	<tr>
+		<td>mac</td>
+		<td>prod</td>
+	</tr>
+	<tr>
+		<td>linux</td>
+		<td>-</td>
+	</tr>
+</table>
 
 # 2. How to run a REST request ?
 

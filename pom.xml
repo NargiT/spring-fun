@@ -34,11 +34,10 @@
 		</developer>
 	</developers>
 	<properties>
-		<!--application environment default variable-->
-		<os_type>windows</os_type>
-		<env_type>dev</env_type>
 		<!-- starting class-->
 		<start-class>com.wrf.springfun.Application</start-class>
+		<hibernate-search-orm.version>5.1.0.Final</hibernate-search-orm.version>
+		<hibernate.version>4.3.8.Final</hibernate.version>
 		<!--UTF 8 for everything-->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -78,19 +77,11 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-search-orm</artifactId>
-			<version>5.0.1.Final</version>
+			<version>${hibernate-search-orm.version}</version>
 		</dependency>
-		<!-- because using JPA -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
-			<version>4.3.8.Final</version>
-		</dependency>
-		<!-- Infinispan integration: -->
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-search-infinispan</artifactId>
-			<version>5.0.1.Final</version>
 		</dependency>
 	</dependencies>
 
@@ -99,6 +90,14 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration combine.children="append">
+					<systemPropertyVariables>
+						<hibernate.search.index.path>${project.build.directory}</hibernate.search.index.path>
+					</systemPropertyVariables>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -24,8 +25,8 @@ public class CustomerController {
 
 	private static final Logger logger = LoggerFactory.getLogger(CustomerController.class);
 
-	@Autowired
-	private CustomerRepository customerRepository;
+	//@Autowired
+	//private CustomerRepository customerRepository;
 
 	@Autowired
 	private Mapper mapper;
@@ -36,13 +37,15 @@ public class CustomerController {
 			@RequestParam(value = "firstname") String firstName,
 			@RequestParam(value = "lastname") String lastName) {
 		Customer customer = new Customer(firstName, lastName);
-		Customer aCustomer = customerRepository.save(customer);
-		return new CustomerCreateAnswer(aCustomer.toString());
+		//Customer aCustomer = customerRepository.save(customer);
+		//return new CustomerCreateAnswer(aCustomer.toString());
+		return new CustomerCreateAnswer("");
 	}
 
 	@RequestMapping(value = "/customer/{lastName}", method = RequestMethod.GET)
 	public CustomerDTO readCustomer(@PathVariable String lastName) {
-		List<Customer> customers = customerRepository.findByLastName(lastName);
+		//List<Customer> customers = customerRepository.findByLastName(lastName);
+		List<Customer> customers = Collections.EMPTY_LIST;
 
 		if (customers.isEmpty()) {
 			return null;

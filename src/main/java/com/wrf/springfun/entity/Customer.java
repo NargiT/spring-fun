@@ -10,12 +10,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * Created by nargit on 15/12/2014.
  */
 @Entity(name = "CUSTOMERS")
 @Indexed
+@Table
 public class Customer {
 
 	@Id

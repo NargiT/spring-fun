@@ -3,10 +3,6 @@
 	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="propertyPlaceholderConfigurer" class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
-		<property name="location" value="config/environment/${env.type}-${os.type}-common.properties" />
-	</bean>
-
 	<import resource="classpath:/spring/spring-root-dozer.xml" />
 	<import resource="classpath:/spring/spring-hibernatesearch-root-context.xml" />
 </beans>

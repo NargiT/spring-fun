@@ -24,7 +24,7 @@ public class CustomerSearchController {
 	private static final Logger logger = LoggerFactory.getLogger(CustomerSearchController.class);
 
 	@Autowired
-	CustomerHibernateSearchRepository customerHibernateSearchRepository;
+	private CustomerHibernateSearchRepository customerHibernateSearchRepository;
 
 	@Autowired
 	private Mapper mapper;

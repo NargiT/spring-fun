@@ -6,3 +6,4 @@ pom.xml.next
 release.properties
 .idea
 *.iml
+src/test/resources/indexes/com.wrf.springfun.entity.Customer/segments.gen
